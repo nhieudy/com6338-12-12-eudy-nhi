@@ -71,7 +71,13 @@ class Word {
   }
 
   // implement the isGameOver function:
-  isGameOver() {}
+  isGameOver() {
+    //If guesses is less than or equal to 0, or word is displayword
+    if((this.remainingGuesses <= 0) || (this.displayWord === this.word))
+      return true;
+    else
+      return false;
+  }
 
   // implement the getWinOrLoss function:
   getWinOrLoss() {}
