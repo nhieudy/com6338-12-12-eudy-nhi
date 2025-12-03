@@ -12,6 +12,10 @@ const words = [
   "mango",
 ];
 
+let wins = 0;
+let losses = 0;
+let currentWord
+
 class Word {
   constructor(word) {
     this.word = word;
