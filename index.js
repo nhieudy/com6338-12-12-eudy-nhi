@@ -14,7 +14,7 @@ const words = [
 
 let wins = 0;
 let losses = 0;
-let currentWord
+let currentWord;
 
 class Word {
   constructor(word) {
@@ -27,7 +27,6 @@ class Word {
 
   // implement the guessLetter function:
   guessLetter(letter) {
-    console.log(this.word);
     let unguessedWord = "";
     let arrayUnguessed = [];
     this.letter = letter;
@@ -50,7 +49,6 @@ class Word {
       this.displayWord = unguessedWord;
     } else {
       //Check if incorrectList array includes guess already
-      console.log(this.incorrectLetters);
       if (this.incorrectLetters.includes(letter)) {
         return;
       } else {
@@ -72,22 +70,19 @@ class Word {
 
   // implement the isGameOver function:
   isGameOver() {
-    //If guesses is less than or equal to 0, or word is displayword
-    if((this.remainingGuesses <= 0) || (this.displayWord === this.word))
+    //If guesses is less than or equal to 0, or word is displayword it is over
+    if (this.remainingGuesses <= 0 || this.displayWord === this.word)
       return true;
-    else
-      return false;
+    else return false;
   }
 
   // implement the getWinOrLoss function:
   getWinOrLoss() {
-    if((this.word === this.displayWord) && (this.remainingGuesses > 0)){
-      return "win"
-    }
-    else if ((this.word !== this.displayWord) && (this.remainingGuesses <= 0)){
-      return "loss"
-    }
-    else{
+    if (this.word === this.displayWord && this.remainingGuesses > 0) {
+      return "win";
+    } else if (this.word !== this.displayWord && this.remainingGuesses <= 0) {
+      return "loss";
+    } else {
       return null;
     }
   }
